@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/*Cabeçalho*/
 /* Container centralizado */
 .container {
   max-width: 1149px;
@@ -53,8 +54,185 @@
   color: white;
   text-decoration: none;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 24px;
   transition: color 0.3s ease;
+}
+/*Cabeçalho*/
+
+/*Hero*/
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 700px;
+  padding: 0 20px;
+
+  position: relative;
+  background: url('image/Images/Hero.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+}
+
+/* Adiciona um overlay escuro por cima da imagem */
+/*Decidir se vai usar ou não*/
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* escurece a imagem */
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 
+.hero h1 {
+  font-size: 56px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 24px;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #ddd;
+}
+
+.btn-cta {
+  background-color: #25D366;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: #1da851;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+  .hero {
+    padding: 80px 15px;
+    min-height: 400px;
+  }
+
+  .hero h2 {
+    font-size: 18px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}
+/*Hero*/
+
+/*Galeria*/
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center; 
+}
+
+.galeria-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.galeria img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-radius: 4px;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* Modal (imagem ampliada) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-conteudo {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+}
+
+.fechar {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 48px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
+  z-index: 1000;
+}
+
+.seta-esquerda {
+  left: 20px;
+}
+
+.seta-direita {
+  right: 20px;
+}
+
+/* Responsividade para telas pequenas (como celulares) */
+@media (max-width: 600px) {
+  .galeria {
+    gap: 8px;
+  }
+
+  .galeria img {
+    max-width: 100%;
+  }
+
+  .fechar {
+    font-size: 30px;
+    right: 20px;
+  }
+}
+/*Galeria*/
