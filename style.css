@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container centralizado */
+.container {
+  max-width: 1149px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Cabeçalho */
+.header {
+  background-color: #1C2D46;
+  padding: 20px 0;
+  color: white;
+  /* Faz a navbar "colar" no topo ao rolar a página */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* garante que fique acima dos outros elementos */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.hero {
+  padding-top: 120px; /* espaço para o cabeçalho fixo */
+}
+
+/* Flexbox para alinhar logo e menu */
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* adiciona quebra de linha se precisar */
+}
+
+/* Logo */
+.logo-img {
+  height: 48px; 
+}
+
+/* Menu de navegação */
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+
