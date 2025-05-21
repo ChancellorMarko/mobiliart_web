@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif,serif;
 }
 
 /*Cabeçalho*/
@@ -236,3 +237,42 @@
   }
 }
 /*Galeria*/
+
+/*Onde estamos section*/
+#local_section{
+  width: 100%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  background-color: #2a2a2a;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Div mapa*/
+#local_map_div{
+  width: 60%;
+  height: auto;
+  display: flexbox;
+  flex-direction: column;
+}
+
+/*Mapa iframe*/
+#iframe_map{
+  border: #ffff;
+  border-radius: 12px;
+}
+
+/*Onde estamos span*/
+#where_we_are_span{
+  margin-top: 20px;
+  margin-bottom: 28px;
+  font-size: 38px;
+  color: #fff;
+}
+
+/*Div informações de contato*/
+#contact_div{
+  height: 450px;
+  width: 120px;
+}
