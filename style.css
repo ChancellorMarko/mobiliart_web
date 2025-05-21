@@ -14,7 +14,7 @@
 
 /* Cabeçalho */
 .header {
-  background-color: #1C2D46;
+  background-color: black;
   padding: 20px 0;
   color: white;
   /* Faz a navbar "colar" no topo ao rolar a página */
@@ -51,7 +51,7 @@
 }
 
 .nav a {
-  color: white;
+  color:  white;
   text-decoration: none;
   font-weight: 500;
   font-size: 24px;
@@ -148,6 +148,12 @@
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center; 
+}
+
+.galeria-section {
+  background-color: #D2B48C;
+  padding: 60px 0;
+  width: 100%;
 }
 
 .galeria-container {
