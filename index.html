@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="image/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="image/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="image/favicon/favicon-16x16.png">
@@ -20,9 +21,9 @@
       <nav>
         <ul class="nav">
           <li><a href="#home">Home</a></li>
-          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#galeria-section">Galeria</a></li>
           <li><a href="#quem-somos">Quem somos</a></li>
-          <li><a href="#onde-estamos">Onde estamos</a></li>
+          <li><a href="#local_section">Onde estamos</a></li>
         </ul>
       </nav>
     </div>
@@ -31,7 +32,7 @@
   <!--Botão de voltar ao topo-->
   <button onclick="topFunction()" id="bk_top_button" title="Voltar ao Topo">&#9206</button>
 
-  <section class="hero">
+  <section class="home">
     <!--Home-->
     <div class="container">
       <h1>Mobiliart Móveis</h1>
@@ -109,18 +110,26 @@
           <span>CEP: 87080-520</span>
           <span>Maringá - Paraná</span>
         </div>
-        <div id="phone_text_div">
-          <h2>Informações de Contato:</h2>
-          <span>Telefone: (44) 3265-3150</span>
-        </div>
-        <a href="https://wa.me/5544991121105/"><button id="whatsapp_button">Faça seu Orçamento</button></a>
+        <a href="https://wa.me/5544991121105/"><button id="whatsapp_button">Faça seu orçamento <i class="fa fa-whatsapp"></i></button></a>
       </div>
     </div>
   </section>
 
   <!--Rodapé-->
-  <section >
-
+  <section id="footer_section">
+    <div id="footer_logo_div">
+      <img id="footer_logo_img" src="/image/logo/MOBILIART MÓVEIS - logo.JPG" alt="Logo que representa a marca Mobiliart Móveis">
+    </div>
+    <div id="footer_copyright_div">
+      <p id="copyright_text">© 2024 MobiliArt Móveis. Todos os direitos reservados.</p>
+    </div>
+    <div id="usefull_links_div">
+      <h3>Links Úteis:</h3>
+      <a class="usefull_links_text" href="#home">Home</a>
+      <a class="usefull_links_text" href="#galeria">Galeria</a>
+      <a class="usefull_links_text" href="">Quem Somos</a>
+      <a class="usefull_links_text" href="#local_section">Onde Estamos</a>
+    </div>
   </section>
 
   <script src="script.js"></script>

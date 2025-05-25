@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif,serif;
+  scroll-behavior: smooth;
 }
 
 /*Cabeçalho*/
@@ -24,10 +25,10 @@
   left: 0;
   width: 100%;
   z-index: 999; /* garante que fique acima dos outros elementos */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.hero {
+.home {
   padding-top: 120px; /* espaço para o cabeçalho fixo */
 }
 
@@ -60,8 +61,8 @@
 }
 /*Cabeçalho*/
 
-/*Hero*/
-.hero {
+/*Home*/
+.home {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,7 +79,7 @@
 
 /* Adiciona um overlay escuro por cima da imagem */
 /*Decidir se vai usar ou não*/
-.hero::before {
+.home::before {
   content: "";
   position: absolute;
   top: 0;
@@ -89,19 +90,19 @@
   z-index: 1;
 }
 
-.hero .container {
+.home .container {
   position: relative;
   z-index: 2;
 }
 
 
-.hero h1 {
+.home h1 {
   font-size: 56px;
   margin-bottom: 30px;
   color: #fff;
 }
 
-.hero p {
+.home p {
   font-size: 24px;
   max-width: 600px;
   margin: 0 auto 30px;
@@ -124,20 +125,20 @@
 
 /* Responsividade para telas pequenas */
 @media (max-width: 600px) {
-  .hero {
+  .home {
     padding: 80px 15px;
     min-height: 400px;
   }
 
-  .hero h2 {
+  .home h2 {
     font-size: 18px;
   }
 
-  .hero h1 {
+  .home h1 {
     font-size: 28px;
   }
 
-  .hero p {
+  .home p {
     font-size: 16px;
   }
 }
@@ -347,7 +348,7 @@
   flex-direction: column;
   justify-content: center;
   color: white;
-  padding: 10px;
+  padding: 40px;
   font-size: 22px;
 }
 /*Div para dispositivos menores*/
@@ -359,28 +360,6 @@
 /*Div para Celulares*/
 @media (max-width: 500px){
   #loc_text_div{
-    padding: 16px;
-  }
-}
-
-/*Div referente ao texto de telefone*/
-#phone_text_div{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: white;
-  padding: 10px;
-  font-size: 22px;
-}
-/*Div para dispositivos menores*/
-@media (max-width: 1024px){
-  #phone_text_div{
-    font-size: 16px;
-  }
-}
-/*Div para Celulares*/
-@media (max-width: 500px){
-  #phone_text_div{
     padding: 16px;
   }
 }
@@ -393,11 +372,11 @@
   background-color: #D2B48C;
   color: black;
   cursor: pointer;
-  padding: 10px;
+  padding: 12px;
   border-radius: 12px;
   text-align: center;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 22px;
 }
 #whatsapp_button:hover{
   background-color: #796750;
@@ -408,12 +387,6 @@
     font-size: 20;
   }
 }
-/*Botão para Celulares*/
-@media (max-width: 500px){
-  #whatsapp_button{
-  }
-}
-
 
 /*Botão de voltar ao topo*/
 #bk_top_button{
@@ -452,4 +425,105 @@
     right: 10px;
     border-radius: 8px;
   }
+}
+
+/*Seção do rodapé do site*/
+#footer_section{
+  width: 100%;
+  height: 450px;
+  max-height: 1000px;
+  background-color: #353535;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+}
+/*Section para dispositivos menores*/
+@media (max-width: 1024px){
+  #footer_section{
+    height: 550px;
+    flex-direction: column;
+  }
+}
+
+/*Logo no rodapé do site*/
+#footer_logo_div{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 10px;
+}
+/*Div para dispositivos menores*/
+@media (max-width: 1024px){
+  #footer_logo_div{
+    width: 100%;
+    padding: 40px;
+  }
+}
+
+/*Configurações da imagem do rodapé*/
+#footer_logo_img{
+  image-rendering: optimizeSpeed;
+  border-radius: 12px;
+  height: 180px;
+  width: 180px;
+}
+/*Imagem para dispositivos menores*/
+@media (max-width: 900px){
+  #footer_logo_img{
+    height: 120px;
+    width: auto;
+  }
+}
+
+/*Div para o texto de copyright*/
+#footer_copyright_div{
+  width: 30%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 10px;
+}
+/*Div para dispositivos menores*/
+@media (max-width: 1024px){
+  #footer_copyright_div{
+    width: 100%;
+    padding: 40px;
+  }
+}
+
+/*Texto referente ao copyright*/
+#copyright_text{
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+
+/*Div com os links úteis do site*/
+#usefull_links_div{
+  width: 30%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+/*Div para dispositivos menores*/
+@media (max-width: 1024px){
+  #usefull_links_div{
+    width: 100%;
+    padding: 40px;
+  }
+}
+
+
+/*Formatação do texto dos links úteis*/
+.usefull_links_text{
+  text-decoration: none;
+  color: inherit;
 }
