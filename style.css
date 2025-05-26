@@ -388,6 +388,14 @@
   }
 }
 
+/*Div para o botão do WhatsApp*/
+#whatsapp_button_div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  padding-top: 18px;
+}
+
 /*Botão de voltar ao topo*/
 #bk_top_button{
   display: none;
@@ -408,7 +416,7 @@
   background-color: #555;
 }
 /*Botão de voltar ao topo para dispositivos menores*/
-@media screen and (max-width: 768px){
+@media (max-width: 768px){
   #bk_top_button{
     padding: 12px;
     font-size: 16px;
@@ -417,7 +425,7 @@
   }
 }
 /*Botão de voltar ao topo para Celulares*/
-@media screen and (max-width: 500px){
+@media (max-width: 500px){
   #bk_top_button{
     padding: 10px;
     font-size: 14px;
@@ -430,7 +438,7 @@
 /*Seção do rodapé do site*/
 #footer_section{
   width: 100%;
-  height: 450px;
+  height: 400px;
   max-height: 1000px;
   background-color: #353535;
   display: flex;
@@ -452,7 +460,7 @@
   display: flex;
   justify-content: center;
   align-items: start;
-  padding: 10px;
+  padding: 30px;
 }
 /*Div para dispositivos menores*/
 @media (max-width: 1024px){
@@ -477,10 +485,82 @@
   }
 }
 
+/*Div com os links úteis do site*/
+#usefull_links_div{
+  width: 30%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+/*Div para dispositivos menores*/
+@media (max-width: 1024px){
+  #usefull_links_div{
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+/*Div para alinhar e modificar o texto dos links úteis*/
+#usefull_links_text_div{
+  color: white;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+
+/*Formatação do texto dos links úteis*/
+.usefull_links_text{
+  text-decoration: none;
+  color: inherit;
+}
+
+/*Div para a area de informações úteis*/
+#usefull_information_div{
+  width: 30%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+/*Div para dispositivos menores*/
+@media (max-width: 1024px){
+  #usefull_information_div{
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+/*Div para o texto de informações úteis*/
+#usefull_information_text_div{
+  color: white;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+
+/*Seção para o copyright*/
+#copyright_footer_section{
+  width: 100%;
+  height: 100px;
+  max-height: 1000px;
+  background-color: #2b2b2b;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+}
+
 /*Div para o texto de copyright*/
 #footer_copyright_div{
   width: 30%;
-  height: 200px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -496,34 +576,7 @@
 
 /*Texto referente ao copyright*/
 #copyright_text{
-  font-size: 18px;
+  font-size: 12px;
   color: white;
   text-align: center;
-}
-
-/*Div com os links úteis do site*/
-#usefull_links_div{
-  width: 30%;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
-  color: white;
-}
-/*Div para dispositivos menores*/
-@media (max-width: 1024px){
-  #usefull_links_div{
-    width: 100%;
-    padding: 40px;
-  }
-}
-
-
-/*Formatação do texto dos links úteis*/
-.usefull_links_text{
-  text-decoration: none;
-  color: inherit;
 }
