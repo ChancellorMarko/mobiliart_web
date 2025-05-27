@@ -590,15 +590,15 @@
 }
   /* Estilos para a seção de diferenciais */
 .diferencial-section {
-  background-color: #5f3907;
+  background-color: #fefdfc;
   padding: 80px 0;
   text-align: center;
 }
 
 .diferencial-section .destaque {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: #060606;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
   position: relative;
   display: inline-block;
 }
@@ -622,7 +622,7 @@
 }
 
 .diferencial-card {
-  background: white;
+  background: #D2B48C;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -644,7 +644,7 @@
 }
 
 .diferencial-card h2 {
-  color: #D2B48C;
+  color: #3f2503;
   margin-bottom: 15px;
   font-size: 1.5rem;
 }
