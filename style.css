@@ -15,23 +15,32 @@
 }
 
 /* Cabeçalho */
+/* Cabeçalho fixo no topo */
 .header {
-  background-color: black;
+  background: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 1),          
+    rgba(62, 44, 35, 0.9),     
+    rgba(62, 44, 35, 0.5),    
+    rgba(62, 44, 35, 0)        
+  );
   padding: 20px 0;
-  color: white;
-  /* Faz a navbar "colar" no topo ao rolar a página */
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 999; /* garante que fique acima dos outros elementos */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  /* Adiciona um pequeno borrão para suavizar a transição */
+  backdrop-filter: blur(2px);
+  /* Garante que o gradiente cubra toda a altura necessária */
+  height: 80px; /* Ajuste conforme necessário */
+  
 }
 
 .home {
-  padding-top: 120px; /* espaço para o cabeçalho fixo */
+  padding-top: 100px; /* Altura do header + espaço */
+  height: calc(700px - 100px); /* Ajusta a altura considerando o header */
 }
-
 /* Flexbox para alinhar logo e menu */
 .header-flex {
   display: flex;
@@ -67,18 +76,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   height: 700px;
   padding: 0 20px;
-
   position: relative;
   background: url('image/Images/Hero.jpg') center/cover no-repeat;
   color: white;
-  text-align: center;
+  text-align: center;                  
 }
 
 /* Adiciona um overlay escuro por cima da imagem */
-/*Decidir se vai usar ou não*/
+
 .home::before {
   content: "";
   position: absolute;
@@ -181,7 +188,7 @@
 .modal {
   display: none;
   position: fixed;
-  z-index: 999;
+  z-index: 1001;
   padding-top: 60px;
   left: 0;
   top: 0;
@@ -206,6 +213,7 @@
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+  z-index: 1002;
 }
 
 .seta {
@@ -217,7 +225,7 @@
   cursor: pointer;
   padding: 10px;
   user-select: none;
-  z-index: 1000;
+  z-index: 1002;
 }
 
 .seta-esquerda {
