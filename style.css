@@ -590,14 +590,14 @@
 }
   /* Estilos para a seção de diferenciais */
 .diferencial-section {
-  background-color: #f5f5f5;
+  background-color: #5f3907;
   padding: 80px 0;
   text-align: center;
 }
 
 .diferencial-section .destaque {
   font-size: 1.5rem;
-  color: #333;
+  color: #060606;
   margin-bottom: 50px;
   position: relative;
   display: inline-block;
