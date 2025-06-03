@@ -36,7 +36,7 @@
         <ul class="nav">
           <li><a href="#home">Home</a></li>
           <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#quem-somos">Quem somos</a></li>
+          <li><a href="#quemSomos_section">Quem somos</a></li>
           <li><a href="#local_section">Onde estamos</a></li>
         </ul>
       </nav>
@@ -131,39 +131,57 @@
 
     <!--Quem somos-->
     <section id="quemSomos_section">
-      <h1>Quem somos?</h1>
-      <div class="barrinha"></div>
-      <p>Com mais de 25 anos de experiência no setor moveleiro, a Mobiliart Móveis é liderada por um marceneiro
-        apaixonado pela arte de transformar madeira em peças únicas e funcionais.
-        Ao longo de sua carreira, ele desenvolveu habilidades técnicas refinadas, combinando métodos tradicionais de
-        marcenaria com inovações modernas para atender às necessidades específicas de cada cliente.
-        Seu compromisso com a qualidade e a atenção aos detalhes garantem que cada projeto seja executado com precisão,
-        desde a concepção até a instalação final.
-        Especializado em móveis planejados e sob medida, ele trabalha com diversos materiais, como MDF, compensado e
-        madeira maciça, sempre buscando soluções que aliam estética, funcionalidade e durabilidade.
-        A Mobiliart Móveis preza pelo relacionamento próximo com seus clientes, oferecendo atendimento personalizado e
-        acompanhamento em todas as etapas do projeto.
-        A satisfação do cliente é a maior recompensa, refletida na fidelidade e nas recomendações que impulsionam o
-        crescimento contínuo da empresa.</p>
-         <div class="container2">
-           <div class="card_quemSomos2">
-             <img src="image/Images/icon1.png" alt="icon1-25anos" class="icon">
+      <div class="quemSomos_container">
+        <div class="texto_quemSomos">
+          <h1>Quem somos?</h1>
+          <p>
+            Com mais de 25 anos de experiência no setor moveleiro, a Mobiliart Móveis é liderada por um marceneiro
+            apaixonado pela arte de transformar madeira em peças únicas.
+            Ao longo de sua carreira, ele desenvolveu habilidades técnicas refinadas, combinando métodos tradicionais de
+            marcenaria com inovações modernas para atender às necessidades específicas de cada cliente.
+            Seu compromisso com a qualidade e a atenção aos detalhes garantem que cada projeto seja executado com
+            precisão,
+            desde a concepção até a instalação final.
+            Especializado em móveis planejados e sob medida, ele trabalha com diversos materiais, como MDF, compensado e
+            madeira maciça, sempre buscando soluções que aliam estética, funcionalidade e durabilidade.
+            A Mobiliart Móveis preza pelo relacionamento próximo com seus clientes, oferecendo atendimento personalizado
+            e
+            acompanhamento em todas as etapas do projeto.
+            A satisfação do cliente é a maior recompensa, refletida na fidelidade e nas recomendações que impulsionam o
+            crescimento contínuo da empresa.
+          </p>
+          <div class="container2">
+            <div class="card_quemSomos2">
+              <img src="image/Images/icon1.png" alt="icon1" class="icon">
               <h2>+25 anos</h2>
-              <p class="textH2">Atuando no mercado de trabalho</p>
+              <p class="textH2">Atuando no mercado</p>
             </div>
             <div class="card_quemSomos2">
-             <img src="image/Images/icon2.png" alt="icon2-clientes" class="icon">
+              <img src="image/Images/icon3.png" alt="icon2" class="icon">
               <h2>+1000</h2>
               <p class="textH2">Clientes satisfeitos</p>
             </div>
-            <div class="card_quemSomos2">
-             <img src="image/Images/icon3.png" alt="icon3-produtos" class="icon">
-              <h2>+1500</h2>
-              <p class="textH2">Projetos concluídos</p>
-            </div>
-         </div>
-        
+          </div>
 
+
+        </div>
+
+        <!-- Carrossel de imagens -->
+        <div class="carrossel">
+          <div class="slides">
+            <img src="image/Images/Galeria1.jpg" alt="foto1">
+            <img src="image/Images/Galeria2.jpg" alt="foto2">
+            <img src="image/Images/Galeria3.jpg" alt="foto3">
+            <img src="image/Images/Galeria4.jpg" alt="foto4">
+          </div>
+          <div class="indicadores">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!--Onde estamos-->
@@ -227,5 +245,39 @@
     <script src="script.js"></script>
     <script src="bk_button_script.js"></script>
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const track = document.querySelector('.galeria-track');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const images = document.querySelectorAll('.galeria-track img');
+
+    let index = 0;
+    const visibleImages = 3; // Quantas imagens aparecem por vez
+    const imgWidth = images[0].clientWidth + 10; // 10px de gap
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * imgWidth}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if (index < images.length - visibleImages) {
+        index++;
+        updateCarousel();
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (index > 0) {
+        index--;
+        updateCarousel();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      updateCarousel(); // recalcula ao redimensionar
+    });
+  });
+</script>
 
 </html>
