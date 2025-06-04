@@ -865,21 +865,23 @@
   overflow: hidden;
   position: relative;
   margin-top: 70px;
+  width: 100%;
+  border-radius: 10px;
 }
 
 .indicadores {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
-  gap: 8px;
+  gap: 10px;
+  margin-top: 15px;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
   background-color: #bbb;
-  border-radius: 60%;
-  display: inline-block;
+  cursor: pointer; /* Mostra que é clicável */
   transition: background-color 0.3s;
 }
 
@@ -887,51 +889,67 @@
   background-color: #333;
 }
 
+.dot:hover {
+  background-color: #777;
+}
+
 
 .slides {
   display: flex;
-  animation: slide 10s infinite;
+  animation: slide 24s infinite;
   gap: 0;
+  width: 100%;
 }
 
 .slides img {
   width: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  flex-shrink: 0;
 }
 
 /* Animação para o carrossel */
+
 @keyframes slide {
-
-  0%,
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(0); /* Pausa na 1ª imagem */
+  }
   20% {
-    transform: translateX(0%);
+    transform: translateX(-100%); /* Transição para 2ª imagem */
   }
-
-  25%,
-  45% {
-    transform: translateX(-100%);
+  35% {
+    transform: translateX(-100%); /* Pausa na 2ª imagem */
   }
-
-  50%,
-  70% {
-    transform: translateX(-200%);
+  40% {
+    transform: translateX(-200%); /* Transição para 3ª imagem */
   }
-
-  75%,
+  55% {
+    transform: translateX(-200%); /* Pausa na 3ª imagem */
+  }
+  60% {
+    transform: translateX(-300%); /* Transição para 4ª imagem */
+  }
+  75% {
+    transform: translateX(-300%); /* Pausa na 4ª imagem */
+  }
+  80% {
+    transform: translateX(0); /* Volta para a 1ª imagem */
+  }
   100% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
-  
 }
+
 @media (max-width: 768px) {
   .quemSomos_container {
-    flex-direction: column; 
-    align-items: center;   
+    flex-direction: column;
+    align-items: center;
   }
 
   .carrossel {
-    order: 3; 
+    order: 3;
     margin-top: 30px;
   }
 
