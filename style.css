@@ -192,16 +192,22 @@
 
 
 .home h1 {
+  font-family: 'bradley hand', cursive;
   font-size: 56px;
+  font-weight: 800;
   margin-bottom: 30px;
   color: #fff;
+  letter-spacing: -1.2px;
 }
 
 .home p {
+  font-family: 'Work Sans', sans-serif;
   font-size: 24px;
+  font-weight: 400;
   max-width: 600px;
   margin: 0 auto 30px;
   color: #ddd;
+  letter-spacing: 0.3px;
 }
 
 .btn-cta {
