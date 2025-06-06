@@ -80,6 +80,81 @@
   transition: color 0.3s ease;
 }
 
+/* Botão WhatsApp na navbar */
+.btn-whatsapp {
+  background-color: #25D366 !important;
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1da851 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp i {
+  font-size: 16px;
+}
+
+/* Responsividade para navbar */
+@media (max-width: 768px) {
+  .header-flex {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0;
+  }
+  
+  .header {
+    height: auto;
+    min-height: 80px;
+  }
+  
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .nav a {
+    font-size: 18px;
+  }
+  
+  .btn-whatsapp {
+    margin-left: 0;
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+  
+  .home {
+    padding-top: 120px; /* Ajusta para o header maior no mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .btn-whatsapp {
+    margin-top: 10px;
+  }
+  
+  .home {
+    padding-top: 200px; /* Ajusta ainda mais para mobile pequeno */
+  }
+}
 /*Cabeçalho*/
 
 /*Home*/
@@ -214,7 +289,43 @@
     gap: 50px;
   }
 }
+/* Container para as frases em cascata */
+.frases-cascata {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
 
+/* Primeira frase - alinhada à esquerda */
+.frase-esquerda {
+  text-align: left;
+  transform: translateX(-40px);
+  margin-bottom: 15px;
+}
+
+/* Segunda frase - centralizada */
+.frase-centro {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Terceira frase - alinhada à direita */
+.frase-direita {
+  text-align: right;
+  transform: translateX(40px);
+}
+
+/* Responsividade para o efeito cascata */
+@media (max-width: 600px) {
+  .frase-esquerda {
+    transform: translateX(-20px);
+  }
+  
+  .frase-direita {
+    transform: translateX(20px);
+  }
+}
 /*Hero*/
 
 /*Galeria*/
