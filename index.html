@@ -32,15 +32,22 @@
       <div class="logo">
         <img src="image/logo/MOBILIART MÓVEIS - logo.JPG" alt="Mobiliart Móveis" class="logo-img">
       </div>
-      <nav>
-        <ul class="nav">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#quemSomos_section">Quem somos</a></li>
-          <li><a href="#local_section">Onde estamos</a></li>
-          <li><a href="https://wa.me/5544991121105" target="_blank">Entre em contato</a></li>
-        </ul>
-      </nav>
+      <!-- Botão do menu hamburguer -->
+        <button id="hamburger_menu_button" aria-label="Menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <!--Navbar-->
+        <nav id="nav_menu">
+          <ul class="nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#quemSomos_section">Quem somos</a></li>
+            <li><a href="#local_section">Onde estamos</a></li>
+            <li><a href="https://wa.me/5544991121105" target="_blank">Entre em contato</a></li>
+          </ul>
+        </nav>
     </div>
 </header>
 
@@ -54,8 +61,8 @@
       <p class="frase-direita">resultados que encantam.</p>
     </div>
   </div>
-</section>
-  <section>
+  </section>
+
     <!--Há mais de 25 anos no mercado-->
     <section id="diferencial" class="diferencial-section">
       <div class="container">
@@ -246,40 +253,42 @@
 
     <script src="script.js"></script>
     <script src="bk_button_script.js"></script>
-</body>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const track = document.querySelector('.galeria-track');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    const images = document.querySelectorAll('.galeria-track img');
+    <script src="hb_button_script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+      const track = document.querySelector('.galeria-track');
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      const images = document.querySelectorAll('.galeria-track img');
 
-    let index = 0;
-    const visibleImages = 3; // Quantas imagens aparecem por vez
-    const imgWidth = images[0].clientWidth + 10; // 10px de gap
+      let index = 0;
+      const visibleImages = 3; // Quantas imagens aparecem por vez
+      const imgWidth = images[0].clientWidth + 10; // 10px de gap
 
-    function updateCarousel() {
-      track.style.transform = `translateX(-${index * imgWidth}px)`;
-    }
-
-    nextBtn.addEventListener('click', () => {
-      if (index < images.length - visibleImages) {
-        index++;
-        updateCarousel();
+      function updateCarousel() {
+        track.style.transform = `translateX(-${index * imgWidth}px)`;
       }
-    });
 
-    prevBtn.addEventListener('click', () => {
-      if (index > 0) {
-        index--;
-        updateCarousel();
-      }
-    });
+      nextBtn.addEventListener('click', () => {
+        if (index < images.length - visibleImages) {
+          index++;
+          updateCarousel();
+        }
+      });
 
-    window.addEventListener('resize', () => {
-      updateCarousel(); // recalcula ao redimensionar
+      prevBtn.addEventListener('click', () => {
+        if (index > 0) {
+          index--;
+          updateCarousel();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        updateCarousel(); // recalcula ao redimensionar
+      });
     });
-  });
 </script>
+</body>
+
 
 </html>

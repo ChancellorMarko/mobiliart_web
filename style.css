@@ -43,6 +43,108 @@
   /* Ajuste conforme necessário */
 
 }
+@media (max-width: 768px) {
+    .header-flex {
+        flex-direction: row; /* Mantém em linha para o hamburguer ficar à direita */
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+
+    .header {
+        height: auto;
+        min-height: 80px;
+    }
+
+    .home {
+        padding-top: 100px;
+    }
+}
+
+/*Menu hamburguer*/
+#hamburger_menu_button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+#hamburger_menu_button span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Estilo quando o menu está aberto */
+#hamburger_menu_button[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#hamburger_menu_button[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger_menu_button[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Menu de navegação */
+#nav_menu {
+    display: flex;
+}
+
+/* Para mobile */
+@media (max-width: 768px) {
+    #hamburger_menu_button {
+        display: block;
+    }
+    
+    .logo {
+        margin-left: 15px; /* Um pouco menos de espaço no mobile */
+        padding: 8px 0; /* Espaço vertical menor no mobile */
+    }
+
+    #nav_menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(62, 44, 35, 0.95);
+        backdrop-filter: blur(5px);
+        transition: right 0.3s ease;
+        padding-top: 80px;
+        z-index: 1000;
+        flex-direction: column;
+    }
+    
+    #nav_menu.active {
+        right: 0;
+    }
+    
+    .header-flex {
+        justify-content: space-between;
+    }
+    
+    /* Remove outros estilos conflitantes */
+    .header-flex {
+        flex-direction: row !important;
+    }
+    
+    .nav {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .nav a {
+        font-size: 20px;
+    }
+}
 
 .home {
   padding-top: 100px;
