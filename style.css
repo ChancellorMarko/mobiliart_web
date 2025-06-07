@@ -102,7 +102,7 @@
     #hamburger_menu_button {
         display: block;
     }
-    
+
     .logo {
         margin-left: 15px; /* Um pouco menos de espaço no mobile */
         padding: 8px 0; /* Espaço vertical menor no mobile */
@@ -803,6 +803,7 @@
   #footer_logo_div {
     width: 100%;
     padding: 40px;
+    text-align: center;
   }
 }
 
@@ -812,6 +813,10 @@
   border-radius: 12px;
   height: 180px;
   width: 180px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /*Imagem para dispositivos menores*/
