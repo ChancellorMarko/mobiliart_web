@@ -1,4 +1,3 @@
-/* Variáveis para modo escuro/claro */
 :root {
   --bg-primary: #ffffff;
   --bg-secondary: #f9f9f9;
@@ -17,29 +16,32 @@
 }
 
 [data-theme="dark"] {
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #2a2a2a;
-  --bg-tertiary: #333333;
-  --bg-dark: #1a1a1a;
-  --bg-darker: #0a0a0a;
-  --text-primary: #ffffff;
-  --text-secondary: #e0e0e0;
-  --text-light: #cccccc;
+  --bg-primary: #121212;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #222;
+  --bg-dark: #121212;
+  --bg-darker: #0d0d0d;
+
+  --text-primary: #f5f5f5;
+  --text-secondary: #dcdcdc;
+  --text-light: #b5b5b5;
   --text-white: #ffffff;
-  --accent-primary: #d2b48c;
-  --accent-secondary: #c9a96b;
-  --accent-dark: #f4e4c1;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --shadow-color: rgba(0, 0, 0, 0.3);
+
+  --accent-primary: #b9935b;
+  --accent-secondary: #8b6e4b;
+  --accent-dark: #e1cfa2;
+
+  --border-color: rgba(255, 255, 255, 0.07);
+  --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Botão do modo escuro */
+/* Botão de alternância do tema */
 .theme-toggle {
   position: fixed;
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
-  background: #d2b48c;
+  background: var(--accent-primary);
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -47,63 +49,59 @@
   cursor: pointer;
   font-size: 20px;
   z-index: 1001;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   color: #333;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .theme-toggle:hover {
   transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 768px) {
-  .theme-toggle {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
-    right: 15px;
-  }
-}
-
-/* Estilos para o modo escuro */
-[data-theme="dark"] body {
-  background-color: #1a1a1a;
+[data-theme="dark"] .theme-toggle {
+  background-color: var(--accent-secondary);
   color: #ffffff;
 }
 
+/* Estilos de dark mode aprimorados */
+[data-theme="dark"] body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
 [data-theme="dark"] .diferencial-section {
-  background-color: #333333;
+  background-color: var(--bg-secondary);
 }
 
 [data-theme="dark"] .diferencial-section .destaque {
-  color: #e0e0e0;
+  color: var(--text-light);
 }
 
 [data-theme="dark"] #quemSomos_section {
-  background-color: #2a2a2a;
+  background-color: var(--bg-dark);
 }
 
 [data-theme="dark"] #quemSomos_section h1,
 [data-theme="dark"] #quemSomos_section p {
-  color: #e0e0e0;
+  color: var(--text-secondary);
 }
 
 [data-theme="dark"] .diferencial-card {
-  background: #c9a96b;
+  background: var(--accent-secondary);
 }
 
 [data-theme="dark"] .diferencial-card h2 {
-  color: #f4e4c1;
+  color: var(--accent-dark);
 }
 
 [data-theme="dark"] #local_section {
-  background-color: #1a1a1a;
+  background-color: var(--bg-primary);
 }
 
 [data-theme="dark"] #footer_section,
 [data-theme="dark"] #copyright_footer_section {
-  background-color: #0a0a0a;
+  background-color: var(--bg-darker);
 }
 
 [data-theme="dark"] #bk_top_button {
@@ -115,12 +113,62 @@
   background-color: #444;
 }
 
-/* Transição suave para todos os elementos */
-body, section, div, h1, h2, h3, p, span, a, button {
-  transition: background-color 0.3s ease, color 0.3s ease;
+[data-theme="dark"] .galeria-section {
+  background-color: #3d3426 !important;
 }
 
-/* Para manter harmonia com o tema mas mais escuro */
-[data-theme="dark"] .galeria-section {
-  background-color: #3d3426 !important; /* Tom marrom escuro */
+[data-theme="dark"] .modal {
+  background-color: rgba(10, 10, 10, 0.95);
+}
+
+[data-theme="dark"] .fechar,
+[data-theme="dark"] .seta {
+  color: #f5f5f5;
+}
+
+/* Melhor transição para tudo */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+/* HOME: Ajustes de texto para dark mode */
+[data-theme="dark"] .home h1 {
+  color: var(--text-white); /* título */
+}
+
+[data-theme="dark"] .home p {
+  color: var(--text-light); /* frases abaixo do título */
+}
+
+/* Navbar: ajusta os links no dark mode */
+[data-theme="dark"] .header {
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 18, 18, 1),      /* topo escuro */
+    rgba(36, 24, 18, 0.9),    /* meio marrom escuro */
+    rgba(36, 24, 18, 0.5),    /* final mais leve */
+    transparent
+  );
+}
+
+[data-theme="dark"] .nav a {
+  color: var(--text-white);
+}
+
+[data-theme="dark"] .nav a:hover {
+  color: var(--accent-dark);
+}
+
+/* Título no modo escuro */
+[data-theme="dark"] .home h1 {
+  color: #ffffff !important; 
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); 
+}
+
+/* Frases da home no modo escuro */
+[data-theme="dark"] .home .frases-cascata p,
+[data-theme="dark"] .home .frase-esquerda,
+[data-theme="dark"] .home .frase-centro,
+[data-theme="dark"] .home .frase-direita {
+  color: var(--text-light);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
