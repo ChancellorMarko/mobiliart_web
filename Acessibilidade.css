@@ -1,0 +1,139 @@
+/* ------------------------------
+   Estilos gerais do site
+------------------------------ */
+body {
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* ------------------------------
+   Botão de acessibilidade
+------------------------------ */
+#accessibility-toggle {
+  position: fixed;
+  bottom: 90px; /* acima de um botão de modo escuro, se houver */
+  right: 20px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
+
+/* ------------------------------
+   Menu de acessibilidade
+------------------------------ */
+#accessibility-menu {
+  display: none;
+  position: fixed;
+  bottom: 150px;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 10000;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  width: 180px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Quando o menu está visível */
+#accessibility-menu.visible {
+  display: flex;
+}
+
+/* Botões do menu */
+#accessibility-menu button {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+}
+
+#accessibility-menu button:hover {
+  background-color: #e0e0e0;
+}
+
+/* ------------------------------
+   Classes de acessibilidade
+------------------------------ */
+
+/* Texto grande aplicado globalmente */
+/* Aumentar texto apenas em elementos menores */
+body.large-text p,
+body.large-text li,
+body.large-text span,
+body.large-text a,
+body.large-text label,
+body.large-text input,
+body.large-text textarea,
+body.large-text button {
+  font-size: 1.5em !important;
+}
+
+/* Alto contraste aplicado globalmente */
+body.high-contrast {
+  background-color: black !important;
+  color: yellow !important;
+}
+body.high-contrast * {
+  background-color: black !important;
+  color: yellow !important;
+  border-color: yellow !important;
+}
+
+/* Tons de cinza */
+body.grayscale {
+  filter: grayscale(1);
+}
+
+/* Inverter cores */
+body.invert {
+  filter: invert(1);
+}
+
+/* Aumentar espaçamento */
+body.spacing * {
+  line-height: 2em !important;
+  letter-spacing: 1px !important;
+}
+
+/* Destacar links */
+body.highlight-links a {
+  background: yellow !important;
+  color: black !important;
+  text-decoration: underline !important;
+}
+
+/* Ocultar imagens */
+body.hide-images img {
+  display: none !important;
+}
+
+/* Mostrar foco */
+body.focus-outline *:focus {
+  outline: 3px solid red !important;
+}
+
+/* Modo leitura */
+body.reading-mode {
+  background-color: #fdf6e3 !important;
+  color: #333 !important;
+}
+body.reading-mode * {
+  background-color: #fdf6e3 !important;
+  color: #333 !important;
+}
+

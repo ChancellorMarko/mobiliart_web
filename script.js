@@ -76,3 +76,4 @@ window.addEventListener('DOMContentLoaded', () => {
     mostrarImagem(indiceAtual + 1);
   });
 });
+

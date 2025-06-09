@@ -14,6 +14,7 @@
   <!-- SEO BÁSICO -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="DarkMode.css">
+  <link rel="stylesheet" href="Acessibilidade.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="apple-touch-icon" sizes="180x180" href="image/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="image/favicon/favicon-32x32.png">
@@ -255,6 +256,7 @@
     <script src="script.js"></script>
     <script src="bk_button_script.js"></script>
     <script src="hb_button_script.js"></script>
+    <script src="Acessibilidade.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
       const track = document.querySelector('.galeria-track');
@@ -288,7 +290,34 @@
         updateCarousel(); // recalcula ao redimensionar
       });
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.getElementById("accessibility-toggle");
+  const menu = document.getElementById("accessibility-menu");
+
+  toggleButton.addEventListener("click", () => {
+    console.log("Clique detectado no botão de acessibilidade");
+    menu.classList.toggle("visible");
+  });
+});
 </script>
+
+<button id="accessibility-toggle" aria-label="Abrir menu de acessibilidade">
+  <i class="fa fa-universal-access" aria-hidden="true"></i>
+</button>
+<!-- Menu de opções -->
+<div id="accessibility-menu">
+  <button onclick="toggleFeature('large-text')">Texto Grande</button>
+  <button onclick="toggleFeature('high-contrast')">Alto Contraste</button>
+  <button onclick="toggleFeature('grayscale')">Tons de Cinza</button>
+  <button onclick="toggleFeature('invert')">Inverter Cores</button>
+  <button onclick="toggleFeature('spacing')">Aumentar Espaçamento</button>
+  <button onclick="toggleFeature('highlight-links')">Destacar Links</button>
+  <button onclick="toggleFeature('hide-images')">Ocultar Imagens</button>
+  <button onclick="toggleFeature('focus-outline')">Mostrar Foco</button>
+  <button onclick="toggleFeature('reading-mode')">Modo Leitura</button>
+  <button onclick="resetAccessibility()">Redefinir</button>
+</div>
 <!-- Botão de alternância de tema -->
 <button class="theme-toggle" id="theme-toggle" title="Alternar tema claro/escuro">
   <i class="fa fa-moon-o"></i>
