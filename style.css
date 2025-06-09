@@ -854,6 +854,12 @@
   flex-direction: column;
   font-size: 18px;
 }
+@media (max-width: 480px) {
+  #usefull_links_text_div {
+    width: 100%;
+    text-align: center;
+  }
+}
 
 /*Formatação do texto dos links úteis*/
 .usefull_links_text {
@@ -887,6 +893,13 @@
   display: flex;
   flex-direction: column;
   font-size: 18px;
+}
+@media (max-width: 1024px) {
+  #usefull_information_text_div {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 /*Seção para o copyright*/
@@ -1047,6 +1060,11 @@
   max-width: 1000px;
   margin: 0 auto;
   /* Centraliza horizontalmente */
+}
+@media (max-width: 480px) {
+  .container2{
+    justify-content: center;
+  }
 }
 
 .card_quemSomos2 {
