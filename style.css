@@ -39,7 +39,7 @@
   /* Adiciona um pequeno borrão para suavizar a transição */
   backdrop-filter: blur(2px);
   /* Garante que o gradiente cubra toda a altura necessária */
-  height: 80px;
+  height: 100px;
   /* Ajuste conforme necessário */
 
 }
@@ -120,6 +120,9 @@
         padding-top: 80px;
         z-index: 1000;
         flex-direction: column;
+        display: flex;
+  align-items: center; /* Garante alinhamento */
+  height: 100%;
     }
     
     #nav_menu.active {
@@ -147,7 +150,7 @@
 }
 
 .home {
-  padding-top: 100px;
+  padding-top: 180px;
   /* Altura do header + espaço */
   height: calc(700px - 100px);
   /* Ajusta a altura considerando o header */
@@ -157,16 +160,17 @@
 .header-flex {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  /* adiciona quebra de linha se precisar */
+  align-items: center; /* mantém todos alinhados no centro vertical */
+  height: 100%;
 }
 
 /* Logo */
 .logo-img {
-  height: 48px;
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
-
 /* Menu de navegação */
 .nav {
   list-style: none;
@@ -178,7 +182,7 @@
   color: white;
   text-decoration: none;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 18px;
   transition: color 0.3s ease;
 }
 
