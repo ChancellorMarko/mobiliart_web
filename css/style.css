@@ -159,9 +159,13 @@
 /* Flexbox para alinhar logo e menu */
 .header-flex {
   display: flex;
-  justify-content: space-between;
-  align-items: center; /* mantém todos alinhados no centro vertical */
+  justify-content: space-between; /* Distribui os itens igualmente */
+  align-items: center;
   height: 100%;
+  width: 100%;
+  max-width: 1149px; /* Mesma largura do seu container */
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Logo */
@@ -170,14 +174,19 @@
   width: auto;
   object-fit: contain;
   display: block;
+  margin: 0; /* Remove margens extras */
 }
+
 /* Menu de navegação */
 .nav {
   list-style: none;
   display: flex;
   gap: 30px;
-  margin-right: 60px;
+  margin: 0; /* Remove a margem direita */
+  padding: 0;
+  align-items: center;
 }
+
 #nav_menu {
   display: flex;
   justify-content: center; /* centraliza os botões */
