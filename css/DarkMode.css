@@ -172,3 +172,31 @@
   color: var(--text-light);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
+
+/* Modo escuro para a seção "Onde estamos" */
+[data-theme="dark"] #local_section {
+  background-color: #3d3426; 
+}
+[data-theme="dark"] #local_section h2,
+[data-theme="dark"] #local_section h1,
+[data-theme="dark"] #local_section p,
+[data-theme="dark"] #local_section span,
+[data-theme="dark"] #local_section strong {
+  color: var(--text-white);
+}
+
+[data-theme="dark"] #contact_div,
+[data-theme="dark"] #loc_text_div {
+  color: var(--text-white);
+}
+
+[data-theme="dark"] #whatsapp_button {
+  background-color: var(--accent-secondary);
+  color: var(--text-white);
+  border: 2px solid var(--accent-dark);
+}
+
+[data-theme="dark"] #whatsapp_button:hover {
+  background-color: var(--accent-dark);
+  color: var(--text-white);
+}
