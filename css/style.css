@@ -277,7 +277,7 @@
   height: 700px;
   padding: 0 20px;
   position: relative;
-  background: url('image/Images/Hero.jpg') center/cover no-repeat;
+  background: url('../image/Images/Hero.jpg') center/cover no-repeat;
   color: white;
   text-align: center;
 }
