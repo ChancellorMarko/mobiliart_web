@@ -137,3 +137,11 @@ body.reading-mode * {
   color: #333 !important;
 }
 
+html body.large-text p.destaque {
+  font-size: 1.8em !important;
+}
+
+body.large-text .nav a {
+  font-size: 1.1em !important;
+  padding: 8px 12px !important;
+}
