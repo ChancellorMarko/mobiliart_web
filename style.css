@@ -406,39 +406,48 @@
     gap: 50px;
   }
 }
-/* Container para as frases em cascata */
 .frases-cascata {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
+  padding: 40px 0;
 }
 
-/* Primeira frase - alinhada à esquerda */
+.frases-cascata p {
+  font-family: 'Edu NSW ACT Cursive', serif;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 20px 0;
+}
+
+/* Efeito em cascata */
 .frase-esquerda {
   text-align: left;
-  transform: translateX(-40px);
-  margin-bottom: 15px;
+  transform: translateX(-60px);
 }
 
-/* Segunda frase - centralizada */
 .frase-centro {
   text-align: center;
-  margin-bottom: 15px;
 }
 
-/* Terceira frase - alinhada à direita */
 .frase-direita {
   text-align: right;
-  transform: translateX(40px);
+  transform: translateX(60px);
 }
 
-/* Responsividade para o efeito cascata */
-@media (max-width: 600px) {
+/* Responsivo */
+@media (max-width: 768px) {
+  .frases-cascata p {
+    font-size: 24px;
+  }
+
   .frase-esquerda {
     transform: translateX(-20px);
   }
-  
+
   .frase-direita {
     transform: translateX(20px);
   }
