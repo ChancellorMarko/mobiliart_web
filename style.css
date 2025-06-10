@@ -570,7 +570,7 @@
   width: 100%;
   height: 600px;
   max-height: 1000px;
-  background-color: #2a2a2a;
+  background-color: #D2B48C;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -642,7 +642,7 @@
   margin-left: 20px;
   margin-bottom: 50px;
   font-size: 38px;
-  color: #fff;
+  color: black;
 }
 
 /*Div informações de contato*/
@@ -682,8 +682,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: white;
+  color: black;
   padding: 40px;
+  gap: 8px;
   font-size: 22px;
 }
 
@@ -713,7 +714,7 @@
   display: inline-block;
   border: none;
   outline: none;
-  background-color: #D2B48C;
+  background-color: white;
   color: black;
   cursor: pointer;
   padding: 12px;
@@ -724,7 +725,7 @@
 }
 
 #whatsapp_button:hover {
-  background-color: #796750;
+  background-color: #e2e2e2;
 }
 
 /*Botão para dispositivos menores*/
@@ -790,7 +791,7 @@
 /*Seção do rodapé do site*/
 #footer_section {
   width: 100%;
-  height: 300px;
+  height: 250px;
   max-height: 1000px;
   background-color: #121212;
   display: flex;
