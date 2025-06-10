@@ -92,11 +92,6 @@
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Menu de navegação */
-#nav_menu {
-    display: flex;
-}
-
 /* Para mobile */
 @media (max-width: 768px) {
     #hamburger_menu_button {
