@@ -176,8 +176,13 @@
   list-style: none;
   display: flex;
   gap: 30px;
+  margin-right: 60px;
 }
-
+#nav_menu {
+  display: flex;
+  justify-content: center; /* centraliza os botões */
+  flex-grow: 1; /* ocupa espaço entre logo e botão */
+}
 .nav a {
   color: white;
   text-decoration: none;
