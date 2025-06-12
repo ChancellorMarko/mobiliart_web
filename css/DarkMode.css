@@ -200,3 +200,7 @@
   background-color: var(--accent-dark);
   color: var(--text-white);
 }
+
+body.modal-aberta .theme-toggle {
+  display: none !important;
+}

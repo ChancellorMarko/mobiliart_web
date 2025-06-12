@@ -1,6 +1,5 @@
-/*Galeria*/ 
 // Função para embaralhar array (Fisher-Yates)
-  function embaralhar(array) {
+function embaralhar(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
@@ -37,6 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
   imagensEmbaralhadas.forEach((img, index) => {
     img.addEventListener('click', () => {
       modal.style.display = 'block';
+      document.body.classList.add('modal-aberta'); // ← ADICIONA CLASSE
       mostrarImagem(index);
     });
   });
@@ -44,11 +44,13 @@ window.addEventListener('DOMContentLoaded', () => {
   // Fechar modal
   fechar.addEventListener('click', () => {
     modal.style.display = 'none';
+    document.body.classList.remove('modal-aberta'); // ← REMOVE CLASSE
   });
 
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
       modal.style.display = 'none';
+      document.body.classList.remove('modal-aberta'); // ← REMOVE CLASSE
     }
   });
 
@@ -61,6 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
         mostrarImagem(indiceAtual - 1);
       } else if (e.key === 'Escape') {
         modal.style.display = 'none';
+        document.body.classList.remove('modal-aberta'); // ← REMOVE CLASSE
       }
     }
   });
@@ -76,4 +79,3 @@ window.addEventListener('DOMContentLoaded', () => {
     mostrarImagem(indiceAtual + 1);
   });
 });
-
