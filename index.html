@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -14,11 +14,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap" rel="stylesheet">
-  <!-- SEO BÁSICO -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/DarkMode.css">
-  <link rel="stylesheet" href="css/Acessibilidade.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/darkmode.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <!-- Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="image/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="image/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="image/favicon/favicon-16x16.png">
@@ -27,15 +29,37 @@
 </head>
 
 <body>
-
   <!--Botão de voltar ao topo-->
   <button onclick="topFunction()" id="bk_top_button" title="Voltar ao Topo">&#9206</button>
+
+  <!-- Botão de Acessibilidade -->
+  <button id="accessibility-toggle" aria-label="Abrir menu de acessibilidade">
+    <i class="fa fa-universal-access" aria-hidden="true"></i>
+  </button>
+
+  <!-- Botão Dark Mode (direita - acima) -->
+  <button class="theme-toggle" id="theme-toggle" title="Alternar tema claro/escuro">
+    <i class="fa fa-moon-o"></i>
+  </button>
+
+  <div id="accessibility-menu">
+    <button onclick="toggleFeature('large-text')">Aumentar Texto</button>
+    <button onclick="toggleFeature('high-contrast')">Alto Contraste</button>
+    <button onclick="toggleFeature('grayscale')">Tons de Cinza</button>
+    <button onclick="toggleFeature('invert')">Inverter Cores</button>
+    <button onclick="toggleFeature('spacing')">Aumentar Espaçamento</button>
+    <button onclick="toggleFeature('highlight-links')">Destacar Links</button>
+    <button onclick="toggleFeature('hide-images')">Ocultar Imagens</button>
+    <button onclick="toggleFeature('focus-outline')">Mostrar Foco</button>
+    <button onclick="toggleFeature('reading-mode')">Modo Leitura</button>
+    <button onclick="resetAccessibility()">Redefinir</button>
+  </div>
 
   <!-- Cabeçalho com Nav Bar -->
   <header class="header">
     <div class="container header-flex">
       <div class="logo">
-        <img src="image/logo/NovaLogo.png" alt="Mobiliart Móveis" class="logo-img">
+        <img src="images/logo/NovaLogo.png" alt="Mobiliart Móveis" class="logo-img">
       </div>
       <!-- Botão do menu hamburguer -->
       <button id="hamburger_menu_button" aria-label="Menu" aria-expanded="false">
@@ -58,38 +82,37 @@
 
   <!-- Seção Home -->
   <section class="home" id="home">
-  <div class="container">
-    <div class="frases-cascata">
-      <p class="frase-esquerda no-scale">Qualidade que impressiona, </p>
-      <p class="frase-centro no-scale">agilidade que surpreende,</p>
-      <p class="frase-direita no-scale">resultados que encantam.</p>
+    <div class="container">
+      <div class="frases-cascata">
+        <p class="frase-esquerda no-scale">Qualidade que impressiona,</p>
+        <p class="frase-centro no-scale">agilidade que surpreende,</p>
+        <p class="frase-direita no-scale">resultados que encantam.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!--Há mais de 25 anos no mercado-->
   <section id="diferencial" class="diferencial-section">
     <div class="container">
       <p class="destaque">Mais de 30 anos entregando móveis planejados com excelência, elegância e compromisso.</p>
-
       <div class="diferenciais-container">
         <!-- Primeiro diferencial -->
         <div class="diferencial-card">
-          <img src="image/logo/Qualidade.png" alt="Qualidade Artesanal" class="diferencial-icon">
+          <img src="images/icons/measuring_icon.png" alt="Qualidade Artesanal" class="diferencial-icon">
           <h2>Qualidade Artesanal</h2>
           <p>Acabamento feito com precisão e cuidado</p>
         </div>
 
         <!-- Segundo diferencial -->
         <div class="diferencial-card">
-          <img src="image/logo/Manutenção.png" alt="Ícone Personalização" class="diferencial-icon">
+          <img src="images/icons/tools_icon.png" alt="Ícone Personalização" class="diferencial-icon">
           <h2>Manutenção Vitalícia</h2>
           <p>Cada móvel projetado de forma única</p>
         </div>
 
         <!-- Terceiro diferencial -->
         <div class="diferencial-card">
-          <img src="image/logo/Durabilidade.png" alt="Ícone Estilo" class="diferencial-icon">
+          <img src="images/icons/durability_icon.png" alt="Ícone Estilo" class="diferencial-icon">
           <h2>Estilo e Durabilidade</h2>
           <p>Funcionalidade com alto padrão estético</p>
         </div>
@@ -97,52 +120,22 @@
     </div>
   </section>
 
-  <section class="galeria-section">
-    <!--Galeriaa-->
-    <div class="galeria-container" id="galeria">
-      <div class="galeria">
-        <img src="image/Images/Galeria1.jpg" alt="Imagem 1">
-        <img src="image/Images/Galeria2.jpg" alt="Imagem 2">
-        <img src="image/Images/Galeria3.jpg" alt="Imagem 3">
-        <img src="image/Images/Galeria4.jpg" alt="Imagem 4">
-        <img src="image/Images/Galeria5.jpg" alt="Imagem 5">
-        <img src="image/Images/Galeria6.jpg" alt="Imagem 6">
-        <img src="image/Images/Galeria7.jpg" alt="Imagem 7">
-        <img src="image/Images/Galeria8.jpg" alt="Imagem 8">
-        <img src="image/Images/Galeria9.jpg" alt="Imagem 9">
-        <img src="image/Images/Galeria10.jpg" alt="Imagem 10">
-        <img src="image/Images/Galeria11.jpg" alt="Imagem 11">
-        <img src="image/Images/Galeria12.jpg" alt="Imagem 12">
-        <img src="image/Images/Galeria13.jpg" alt="Imagem 13">
-        <img src="image/Images/Galeria14.jpg" alt="Imagem 14">
-        <img src="image/Images/Galeria15.jpg" alt="Imagem 15">
-        <img src="image/Images/Galeria16.jpg" alt="Imagem 16">
-        <img src="image/Images/Galeria17.jpg" alt="Imagem 17">
-        <img src="image/Images/Galeria18.jpg" alt="Imagem 18">
-        <img src="image/Images/Galeria19.jpg" alt="Imagem 19">
-        <img src="image/Images/Galeria20.jpg" alt="Imagem 20">
-        <img src="image/Images/Galeria21.jpg" alt="Imagem 21">
-        <img src="image/Images/Galeria22.jpg" alt="Imagem 22">
-        <img src="image/Images/Galeria23.jpg" alt="Imagem 23">
-        <img src="image/Images/Galeria24.jpg" alt="Imagem 24">
-        <img src="image/Images/Galeria25.jpg" alt="Imagem 25">
-        <img src="image/Images/Galeria26.jpg" alt="Imagem 26">
-        <img src="image/Images/Galeria27.jpg" alt="Imagem 27">
-        <img src="image/Images/Galeria28.jpg" alt="Imagem 28">
-        <img src="image/Images/Galeria29.jpg" alt="Imagem 29">
-        <img src="image/Images/Galeria15.jpg" alt="Imagem 30">
+  <section class="galeria-section" id="galeria-section">
+    <div class="galeria-container">
+      <h2>Nossos Projetos</h2>
+      <div class="galeria" id="galeria">
+        <!-- As imagens serão carregadas automaticamente aqui -->
       </div>
     </div>
-
-    <!-- Modal para exibir a imagem ampliada -->
-    <div id="modal" class="modal">
-      <span class="fechar">&times;</span>
-      <img class="modal-conteudo" id="imagem-ampliada">
-      <!-- Setas -->
-      <span class="seta seta-esquerda">&#10094;</span>
-      <span class="seta seta-direita">&#10095;</span>
-    </div>
   </section>
+
+  <!-- Modal (mantenha o mesmo que já tem) -->
+  <div id="modal" class="modal">
+    <span class="fechar">&times;</span>
+    <img class="modal-conteudo" id="imagem-ampliada">
+    <span class="seta seta-esquerda">&#10094;</span>
+    <span class="seta seta-direita">&#10095;</span>
+  </div>
 
   <!--Quem somos-->
   <section id="quemSomos_section">
@@ -167,12 +160,13 @@
         </p>
         <div class="container2">
           <div class="card_quemSomos2">
-            <img src="image/Images/icon1.png" alt="icon1" class="icon">
+            <img src="images/icons/shopping_icon.png" alt="Icone de um carrinha de compras simbolizando mercado"
+              class="icon">
             <h2>+30 anos</h2>
             <p class="textH2">Atuando no mercado</p>
           </div>
           <div class="card_quemSomos2">
-            <img src="image/Images/icon3.png" alt="icon2" class="icon">
+            <img src="images/icons/edit_icon.png" alt="Icone de um papel e caneta simbolizando clientes" class="icon">
             <h2>+1000</h2>
             <p class="textH2">Clientes satisfeitos</p>
           </div>
@@ -182,10 +176,10 @@
       <!-- Carrossel de imagens -->
       <div class="carrossel">
         <div class="slides">
-          <img src="image/Images/Galeria1.jpg" alt="foto1">
-          <img src="image/Images/Galeria2.jpg" alt="foto2">
-          <img src="image/Images/Galeria3.jpg" alt="foto3">
-          <img src="image/Images/Galeria4.jpg" alt="foto4">
+          <img src="images/gallery/Galeria25.webp" alt="foto1">
+          <img src="images/gallery/Galeria27.webp" alt="foto2">
+          <img src="images/gallery/Galeria28.webp" alt="foto3">
+          <img src="images/gallery/Galeria29.webp" alt="foto4">
         </div>
         <div class="indicadores">
           <span class="dot active"></span>
@@ -225,8 +219,7 @@
   <!--Rodapé-->
   <section id="footer_section">
     <div id="footer_logo_div">
-      <img id="footer_logo_img" src="image/logo/logo_mobiliart_moveis.JPG"
-        alt="Logo que representa a marca Mobiliart Móveis">
+      <img id="footer_logo_img" src="images/logo/logo_mobiliart_moveis.JPG" alt="Logomarca da Mobiliart Móveis">
     </div>
     <div id="usefull_information_div">
       <div id="usefull_information_text_div">
@@ -244,6 +237,7 @@
         <a class="usefull_links_text" href="#galeria">Galeria</a>
         <a class="usefull_links_text" href="#quemSomos_section">Quem Somos</a>
         <a class="usefull_links_text" href="#local_section">Onde Estamos</a>
+        <a class="usefull_links_text" href="https://wa.me/5544991121105">Entre em contato</a>
       </div>
     </div>
   </section>
@@ -251,81 +245,17 @@
   <!--Rodapé Copyright-->
   <section id="copyright_footer_section">
     <div id="footer_copyright_div">
-      <p id="copyright_text">© 2024 MobiliArt Móveis. Todos os direitos reservados.</p>
+      <p id="copyright_text">© 2025 MobiliArt Móveis. Todos os direitos reservados.</p>
     </div>
   </section>
 
-  <script src="js/script.js"></script>
+  <!-- Scripts -->
+  <script src="js/accessibility_script.js"></script>
   <script src="js/bk_button_script.js"></script>
+  <script src="js/darkmode_script.js"></script>
+  <script src="js/gallery_script.js"></script>
   <script src="js/hb_button_script.js"></script>
-  <script src="js/Acessibilidade.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const track = document.querySelector('.galeria-track');
-      const prevBtn = document.querySelector('.carousel-btn.prev');
-      const nextBtn = document.querySelector('.carousel-btn.next');
-      const images = document.querySelectorAll('.galeria-track img');
-
-      let index = 0;
-      const visibleImages = 3; // Quantas imagens aparecem por vez
-      const imgWidth = images[0].clientWidth + 10; // 10px de gap
-
-      function updateCarousel() {
-        track.style.transform = `translateX(-${index * imgWidth}px)`;
-      }
-
-      nextBtn.addEventListener('click', () => {
-        if (index < images.length - visibleImages) {
-          index++;
-          updateCarousel();
-        }
-      });
-
-      prevBtn.addEventListener('click', () => {
-        if (index > 0) {
-          index--;
-          updateCarousel();
-        }
-      });
-
-      window.addEventListener('resize', () => {
-        updateCarousel(); // recalcula ao redimensionar
-      });
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const toggleButton = document.getElementById("accessibility-toggle");
-      const menu = document.getElementById("accessibility-menu");
-
-      toggleButton.addEventListener("click", () => {
-        console.log("Clique detectado no botão de acessibilidade");
-        menu.classList.toggle("visible");
-      });
-    });
-  </script>
-
-  <button id="accessibility-toggle" aria-label="Abrir menu de acessibilidade">
-    <i class="fa fa-universal-access" aria-hidden="true"></i>
-  </button>
-  <!-- Menu de opções -->
-  <div id="accessibility-menu">
-    <button onclick="toggleFeature('large-text')">Texto Grande</button>
-    <button onclick="toggleFeature('high-contrast')">Alto Contraste</button>
-    <button onclick="toggleFeature('grayscale')">Tons de Cinza</button>
-    <button onclick="toggleFeature('invert')">Inverter Cores</button>
-    <button onclick="toggleFeature('spacing')">Aumentar Espaçamento</button>
-    <button onclick="toggleFeature('highlight-links')">Destacar Links</button>
-    <button onclick="toggleFeature('hide-images')">Ocultar Imagens</button>
-    <button onclick="toggleFeature('focus-outline')">Mostrar Foco</button>
-    <button onclick="toggleFeature('reading-mode')">Modo Leitura</button>
-    <button onclick="resetAccessibility()">Redefinir</button>
-  </div>
-  <!-- Botão de alternância de tema -->
-  <button class="theme-toggle" id="theme-toggle" title="Alternar tema claro/escuro">
-    <i class="fa fa-moon-o"></i>
-  </button>
-
-  <script src="js/DarkMode.js"></script>
+  <script src="js/carrocel_script.js"></script>
 </body>
 
 

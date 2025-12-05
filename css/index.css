@@ -1,0 +1,1364 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif, serif;
+  scroll-behavior: smooth;
+}
+
+/*Cabeçalho*/
+/* Container centralizado */
+.container {
+  max-width: 1149px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: row;
+  margin-right: 170px;
+  margin-left: 170px;
+  gap: 50px;
+}
+
+/* Cabeçalho */
+/* Cabeçalho fixo no topo */
+.header {
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 1),
+      rgba(62, 44, 35, 0.9),
+      rgba(62, 44, 35, 0.5),
+      rgba(62, 44, 35, 0));
+  padding: 20px 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  /* Adiciona um pequeno borrão para suavizar a transição */
+  backdrop-filter: blur(2px);
+  /* Garante que o gradiente cubra toda a altura necessária */
+  height: 100px;
+  /* Ajuste conforme necessário */
+
+}
+
+@media (max-width: 768px) {
+  .header-flex {
+    flex-direction: row;
+    /* Mantém em linha para o hamburguer ficar à direita */
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+
+  .header {
+    height: auto;
+    min-height: 80px;
+  }
+
+  .home {
+    padding-top: 100px;
+  }
+}
+
+/*Menu hamburguer*/
+#hamburger_menu_button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+#hamburger_menu_button span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Estilo quando o menu está aberto */
+#hamburger_menu_button[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#hamburger_menu_button[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger_menu_button[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Para mobile */
+@media (max-width: 768px) {
+  #hamburger_menu_button {
+    display: block;
+  }
+
+  .logo {
+    margin-left: 15px;
+    /* Um pouco menos de espaço no mobile */
+    padding: 8px 0;
+    /* Espaço vertical menor no mobile */
+  }
+
+  #nav_menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(62, 44, 35, 0.95);
+    backdrop-filter: blur(5px);
+    transition: right 0.3s ease;
+    padding-top: 80px;
+    z-index: 1000;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    /* Garante alinhamento */
+    height: 100%;
+  }
+
+  #nav_menu.active {
+    right: 0;
+  }
+
+  .header-flex {
+    justify-content: space-between;
+  }
+
+  /* Remove outros estilos conflitantes */
+  .header-flex {
+    flex-direction: row !important;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .nav a {
+    font-size: 20px;
+  }
+}
+
+.home {
+  padding-top: 180px;
+  /* Altura do header + espaço */
+  height: calc(700px - 100px);
+  /* Ajusta a altura considerando o header */
+}
+
+/* Flexbox para alinhar logo e menu */
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* mantém todos alinhados no centro vertical */
+  height: 100%;
+}
+
+/* Logo */
+.logo-img {
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Menu de navegação */
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-right: 140px;
+}
+
+#nav_menu {
+  display: flex;
+  justify-content: center;
+  /* centraliza os botões */
+  flex-grow: 1;
+  /* ocupa espaço entre logo e botão */
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+/* Botão WhatsApp na navbar */
+.btn-whatsapp {
+  background-color: #25D366 !important;
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1da851 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp i {
+  font-size: 16px;
+}
+
+/* Responsividade para navbar */
+@media (max-width: 768px) {
+  .header-flex {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  .header {
+    height: auto;
+    min-height: 80px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .nav a {
+    font-size: 18px;
+  }
+
+  .btn-whatsapp {
+    margin-left: 0;
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .home {
+    padding-top: 120px;
+    /* Ajusta para o header maior no mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .btn-whatsapp {
+    margin-top: 10px;
+  }
+
+  .home {
+    padding-top: 200px;
+    /* Ajusta ainda mais para mobile pequeno */
+  }
+}
+
+/*Cabeçalho*/
+
+/*Home*/
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+  padding: 0 20px;
+  position: relative;
+  background: url('../images/gallery/hero.webp') center/cover no-repeat;
+  color: white;
+  text-align: center;
+}
+
+/* Adiciona um overlay escuro por cima da imagem */
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* escurece a imagem */
+  z-index: 1;
+}
+
+.home .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+.home h1 {
+  font-family: 'bradley hand', cursive;
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #fff;
+  letter-spacing: -1.2px;
+}
+
+.home p {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #ddd;
+  letter-spacing: 0.3px;
+}
+
+.btn-cta {
+  background-color: #25D366;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: #1da851;
+}
+
+/* Galeria Simples */
+.galeria-section {
+  background-color: #f8f8f8;
+  padding: 60px 0;
+  width: 100%;
+}
+
+.galeria-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.galeria img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal simplificado */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.modal-conteudo {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 5px;
+}
+
+.fechar {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1002;
+  background: rgba(0, 0, 0, 0.5);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.fechar:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 48px;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  user-select: none;
+  z-index: 1002;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.seta:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.seta-esquerda {
+  left: 20px;
+}
+
+.seta-direita {
+  right: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .galeria {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+  }
+
+  .galeria img {
+    height: 180px;
+  }
+
+  .fechar {
+    font-size: 30px;
+    right: 20px;
+    top: 15px;
+  }
+
+  .seta {
+    font-size: 36px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .galeria img {
+    height: 150px;
+  }
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+  .home {
+    padding: 80px 15px;
+    min-height: 400px;
+  }
+
+  .home h2 {
+    font-size: 18px;
+  }
+
+  .home h1 {
+    font-size: 28px;
+  }
+
+  .home p {
+    font-size: 16px;
+  }
+
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-left: 3 0px;
+    gap: 50px;
+  }
+}
+
+.frases-cascata {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  padding: 40px 0;
+}
+
+.frases-cascata p {
+  font-family: 'Edu NSW ACT Cursive', serif;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 20px 0;
+}
+
+/* Efeito em cascata */
+.frase-esquerda {
+  text-align: left;
+  transform: translateX(-60px);
+}
+
+.frase-centro {
+  text-align: center;
+}
+
+.frase-direita {
+  text-align: right;
+  transform: translateX(60px);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .frases-cascata p {
+    font-size: 24px;
+  }
+
+  .frase-esquerda {
+    transform: translateX(-20px);
+  }
+
+  .frase-direita {
+    transform: translateX(20px);
+  }
+}
+
+/*Hero*/
+
+/*Galeria*/
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.galeria-section {
+  background-color: #D2B48C;
+  padding: 60px 0;
+  width: 100%;
+}
+
+.galeria-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.galeria img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-radius: 4px;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* Modal (imagem ampliada) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-conteudo {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+}
+
+.fechar {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 48px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
+  z-index: 1002;
+}
+
+.seta-esquerda {
+  left: 20px;
+}
+
+.seta-direita {
+  right: 20px;
+}
+
+/* Responsividade para telas pequenas (como celulares) */
+@media (max-width: 600px) {
+  .galeria {
+    gap: 8px;
+  }
+
+  .galeria img {
+    max-width: 100%;
+  }
+
+  .fechar {
+    font-size: 30px;
+    right: 20px;
+  }
+
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-left: 50px;
+    gap: 50px;
+  }
+}
+
+/*Galeria*/
+
+/*Onde estamos section*/
+#local_section {
+  width: 100%;
+  height: 600px;
+  max-height: 1000px;
+  background-color: #D2B48C;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Div para dispositivos menores*/
+@media (max-width: 700px) {
+  #local_section {
+    height: 1000px;
+  }
+}
+
+/*Div que controla mapa e informações de contato*/
+#local_div {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+}
+
+/*Div para dispositivos menores*/
+@media (max-width: 768px) {
+  #local_div {
+    flex-direction: row;
+  }
+}
+
+/*Div para Celulares*/
+@media (max-width: 640px) {
+  #local_div {
+    flex-direction: column;
+  }
+}
+
+/*Div mapa*/
+#local_map_div {
+  width: 100%;
+  max-width: 700px;
+  margin: none;
+  aspect-ratio: 16 / 9;
+}
+
+/*Div para dispositivos menores*/
+@media (max-width: 768px) {
+  #local_map_div {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/*Div para Celulares*/
+@media (max-width: 500px) {
+  #local_map_div {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/*Mapa iframe*/
+#iframe_map {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/*Onde estamos span*/
+#where_we_are_title {
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 50px;
+  font-size: 38px;
+  color: black;
+}
+
+/*Div informações de contato*/
+#contact_div {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Div para dispositivos menores*/
+@media (max-width: 768px) {
+  #contact_div {
+    padding: 20px;
+  }
+
+}
+
+/*Div para Celulares*/
+@media (max-width: 500px) {
+  #contact_div {
+    padding: 30px;
+  }
+
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    gap: 50px;
+  }
+}
+
+/*Div referente ao texto da localização*/
+#loc_text_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+  padding: 40px;
+  gap: 8px;
+  font-size: 22px;
+}
+
+/*Div para dispositivos menores*/
+@media (max-width: 1024px) {
+  #loc_text_div {
+    font-size: 16px;
+  }
+
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    gap: 50px;
+  }
+}
+
+/*Div para Celulares*/
+@media (max-width: 500px) {
+  #loc_text_div {
+    padding: 16px;
+  }
+}
+
+/*Botão de contato do WhatsApp*/
+#whatsapp_button {
+  display: inline-block;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+#whatsapp_button:hover {
+  background-color: #e2e2e2;
+}
+
+/*Botão para dispositivos menores*/
+@media (max-width: 600px) {
+  #whatsapp_button {
+    font-size: 20;
+  }
+}
+
+/*Div para o botão do WhatsApp*/
+#whatsapp_button_div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  padding-top: 18px;
+}
+
+/*Botão de voltar ao topo*/
+#bk_top_button {
+  display: none;
+  position: fixed;
+  /*Travar a posição*/
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  /*Para não ter sobreposição*/
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: black;
+  cursor: pointer;
+  /*Adicionar ponteiro de mouse com o hover*/
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 18px;
+}
+
+#bk_top_button:hover {
+  background-color: #555;
+}
+
+/*Botão de voltar ao topo para dispositivos menores*/
+@media (max-width: 768px) {
+  #bk_top_button {
+    padding: 12px;
+    font-size: 16px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/*Botão de voltar ao topo para Celulares*/
+@media (max-width: 500px) {
+  #bk_top_button {
+    padding: 10px;
+    font-size: 14px;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 8px;
+  }
+}
+
+/*Seção do rodapé do site*/
+#footer_section {
+  width: 100%;
+  height: 250px;
+  max-height: 1000px;
+  background-color: #121212;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+}
+
+/*Section para dispositivos menores*/
+@media (max-width: 1024px) {
+  #footer_section {
+    height: 550px;
+    flex-direction: column;
+  }
+}
+
+/*Logo no rodapé do site*/
+#footer_logo_div {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 30px;
+}
+
+/*Div para dispositivos menores*/
+@media (max-width: 1024px) {
+  #footer_logo_div {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+  }
+}
+
+/*Configurações da imagem do rodapé*/
+#footer_logo_img {
+  image-rendering: optimizeSpeed;
+  border-radius: 12px;
+  height: 180px;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/*Imagem para dispositivos menores*/
+@media (max-width: 900px) {
+  #footer_logo_img {
+    height: 120px;
+    width: auto;
+  }
+}
+
+/*Div com os links úteis do site*/
+#usefull_links_div {
+  width: 30%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+/*Div para dispositivos menores*/
+@media (max-width: 1024px) {
+  #usefull_links_div {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+/*Div para alinhar e modificar o texto dos links úteis*/
+#usefull_links_text_div {
+  color: white;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+
+@media (max-width: 480px) {
+  #usefull_links_text_div {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/*Formatação do texto dos links úteis*/
+.usefull_links_text {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*Div para a area de informações úteis*/
+#usefull_information_div {
+  width: 30%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+/*Div para dispositivos menores*/
+@media (max-width: 1024px) {
+  #usefull_information_div {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+/*Div para o texto de informações úteis*/
+#usefull_information_text_div {
+  color: white;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+  #usefull_information_text_div {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/*Seção para o copyright*/
+#copyright_footer_section {
+  width: 100%;
+  height: 100px;
+  max-height: 1000px;
+  background-color: #121212;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+}
+
+/*Div para o texto de copyright*/
+#footer_copyright_div {
+  width: 30%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 10px;
+}
+
+/*Div para dispositivos menores*/
+@media (max-width: 1024px) {
+  #footer_copyright_div {
+    width: 100%;
+    padding: 40px;
+  }
+}
+
+/*Texto referente ao copyright*/
+#copyright_text {
+  font-size: 12px;
+  color: white;
+  text-align: center;
+}
+
+/* Estilos para a seção de diferenciais */
+.diferencial-section {
+  background-color: #fefdfc;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.diferencial-section .destaque {
+  font-size: 1.7rem;
+  color: #060606;
+  margin-bottom: 65px;
+  position: relative;
+  display: inline-block;
+}
+
+.diferencial-section .destaque::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: #D2B48C;
+  margin: 20px auto;
+}
+
+.diferenciais-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.diferencial-card {
+  background: #D2B48C;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  transition: transform 0.3s ease;
+}
+
+.diferencial-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+.diferencial-card:hover {
+  transform: translateY(-10px);
+}
+
+.diferencial-card h2 {
+  color: #3f2503;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .diferenciais-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .diferencial-card {
+    width: 100%;
+  }
+}
+
+/* QUEM SOMOS */
+
+#quemSomos_section {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+#quemSomos_section h1 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#quemSomos_section p {
+  text-align: justify;
+  max-width: 1000px;
+  margin: 0 0 15px 0;
+  /* sem centralização */
+  font-size: 1.0rem;
+  line-height: 1.4;
+  color: #050505;
+  margin-bottom: 20px;
+}
+
+.quemSomos_container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: nowrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* centraliza o grupo todo na página */
+}
+
+.texto_quemSomos {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  /* Centraliza horizontalmente */
+}
+
+@media (max-width: 480px) {
+  .container2 {
+    justify-content: center;
+  }
+}
+
+.card_quemSomos2 {
+  background-color: #c9a96b;
+  padding: 15px;
+  border-radius: 12px;
+  width: 255px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  /* conteúdo em coluna */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card_quemSomos2 .icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  margin-top: 45px;
+}
+
+.card_quemSomos2 h2 {
+  margin: 5px 0;
+  font-size: 1.6rem;
+  color: #3f2503;
+}
+
+.card_quemSomos2 .textH2 {
+  font-size: 1.0rem;
+  color: #f1f1f1;
+}
+
+/* CSS para o carrossel (adicione ao seu style.css) */
+
+.carrossel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: fit-content;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 400px;
+  /* Ajuste conforme necessário */
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: #fff;
+  transform: scale(1.2);
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Botões de navegação */
+.carrossel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  z-index: 10;
+  border-radius: 3px;
+}
+
+.carrossel-nav:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carrossel-prev {
+  left: 10px;
+}
+
+.carrossel-next {
+  right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .carrossel {
+    height: 300px;
+  }
+
+  .slides {
+    height: 300px;
+  }
+
+  .carrossel-nav {
+    padding: 12px 8px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carrossel {
+    height: 250px;
+  }
+
+  .slides {
+    height: 250px;
+  }
+
+  .carrossel-nav {
+    padding: 10px 6px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,228 @@
+/* CSS para o botão de acessibilidade */
+#accessibility-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #2d91d9;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+#accessibility-toggle:hover {
+  background-color: #2d91d9;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+#accessibility-toggle:focus {
+  outline: 3px solid #D2B48C;
+  outline-offset: 2px;
+}
+
+#accessibility-toggle i {
+  pointer-events: none;
+}
+
+/* Menu de acessibilidade */
+#accessibility-menu {
+  position: fixed;
+  bottom: 80px;
+  /* Posiciona acima do botão */
+  left: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  width: 250px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10000;
+  border: 1px solid #ddd;
+  transform-origin: bottom left;
+}
+
+#accessibility-menu.visible {
+  display: flex;
+  animation: slideUp 0.3s ease forwards;
+}
+
+#accessibility-menu button {
+  background: #f5f5f5;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  color: #333;
+  border-left: 4px solid transparent;
+}
+
+#accessibility-menu button:hover {
+  background: #e0e0e0;
+  border-left-color: #2d91d9;
+  transform: translateX(5px);
+}
+
+#accessibility-menu button:active {
+  transform: translateX(5px) scale(0.98);
+}
+
+#accessibility-menu button:focus {
+  outline: 2px solid #D2B48C;
+  outline-offset: 2px;
+}
+
+#accessibility-menu button:last-child {
+  background: #ff6b6b;
+  color: white;
+  margin-top: 10px;
+}
+
+#accessibility-menu button:last-child:hover {
+  background: #ff5252;
+  border-left-color: #ff5252;
+}
+
+/* Animações */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classes para as funcionalidades de acessibilidade */
+.large-text {
+  font-size: 125% !important;
+}
+
+.large-text * {
+  font-size: inherit !important;
+}
+
+.high-contrast {
+  filter: contrast(1.5) !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast * {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+.grayscale {
+  filter: grayscale(100%) !important;
+}
+
+.invert {
+  filter: invert(1) !important;
+}
+
+.spacing {
+  letter-spacing: 2px !important;
+  line-height: 1.8 !important;
+}
+
+.highlight-links a {
+  background-color: yellow !important;
+  color: #000 !important;
+  padding: 2px 4px !important;
+  text-decoration: underline !important;
+}
+
+.hide-images img {
+  opacity: 0.1 !important;
+}
+
+.focus-outline *:focus {
+  outline: 3px solid red !important;
+  outline-offset: 2px !important;
+}
+
+.reading-mode {
+  background-color: #f8f0e3 !important;
+  color: #000 !important;
+  font-family: 'Georgia', serif !important;
+}
+
+.reading-mode * {
+  background-color: inherit !important;
+  color: inherit !important;
+  font-family: inherit !important;
+}
+
+/* Fechar menu clicando fora */
+#accessibility-menu::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: -1;
+  display: none;
+}
+
+#accessibility-menu.visible::before {
+  display: block;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #accessibility-toggle {
+    width: 45px;
+    height: 45px;
+    bottom: 15px;
+    left: 15px;
+    font-size: 22px;
+  }
+
+  #accessibility-menu {
+    width: 220px;
+    bottom: 70px;
+    left: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  #accessibility-toggle {
+    width: 40px;
+    height: 40px;
+    bottom: 10px;
+    left: 10px;
+    font-size: 20px;
+  }
+
+  #accessibility-menu {
+    width: 200px;
+    bottom: 60px;
+    left: 10px;
+    padding: 10px;
+  }
+
+  #accessibility-menu button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
