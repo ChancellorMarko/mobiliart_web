@@ -379,6 +379,48 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+.galeria-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+  position: relative;
+  padding-top: 30px;
+}
+
+.galeria-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: #D2B48C;
+}
+
+/* Espaçamento extra para desktop */
+@media (min-width: 769px) {
+  .galeria-container {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+
+  .galeria-container h2 {
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+}
+
+/* Ajuste para mobile */
+@media (max-width: 768px) {
+  .galeria-container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    padding-top: 20px;
+  }
+}
+
 /* Modal simplificado */
 .modal {
   display: none;
